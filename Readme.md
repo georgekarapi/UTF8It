@@ -1,0 +1,2 @@
+# UTF8It
+A simple script created in **Python 3.5** for those who are struggling by the "weird" subtitle characters showing on video players. This utility just recognises file encoding using **cchardet** library and then creates a new file-copy with UTF-8 encoding.
