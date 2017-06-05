@@ -8,9 +8,10 @@ import ntpath
 
 
 def wrong():
-    print("Wrong usage. Type utf8it [-options] [file/folder(1)] [file/folder(2)]...\")\n"
+    print("Wrong usage. Type utf8it [-options] [file/folder(1)] [file/folder(2)]...\n"
           "Options:\n"
           "        e : Show file encoding without converting it\n"
+          "\n"
           "Run the script without arguments for options menu\n")
 
 
@@ -27,14 +28,17 @@ def convert(filename, s):
     enc = chardet.detect(file)["encoding"]
     if s == 1:
         if not (enc == "UTF-8"):
-            with codecs.open(filename, "r", enc) as f:
-                with codecs.open(targetFileName, "w", "utf-8") as targetFile:
-                    contents = f.read()
-                    targetFile.write(contents)
-            shutil.move(targetFileName, filename)
-            return "Done!"
+            try:
+                with codecs.open(filename, "r", enc) as f:
+                    with codecs.open(targetFileName, "w", "utf-8") as targetFile:
+                        contents = f.read()
+                        targetFile.write(contents)
+                    shutil.move(targetFileName, filename)
+                return "Done!"
+            except LookupError:
+                return "Unrecognised encoding " + enc
         else:
-            return "Already UTF-8 encoded"
+            return "Already UTF-8 or Unrecognised encoding"
     else:
         return enc
 
