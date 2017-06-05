@@ -38,7 +38,7 @@ def convert(filename, s):
             except LookupError:
                 return "Unrecognised encoding " + enc
         else:
-            return "Already UTF-8"
+            return "Already UTF-8 encoded"
     else:
         return enc
 
