@@ -5,8 +5,8 @@ A simple script created in **Python 3.5** for those who are struggling by the "w
 <b>Terminal</b><br/>
 utf8it {[-options] [file/folder(1)] [file/folder(2)]...}<br/>
 
-<b>Options:</b><br/>
+Options:<br/>
 
        e : Show file encoding without converting it
-######Binary
-Drag'n drop file or folders you want to connvert
+<b>Binary</b><br/>
+Drag'n drop the file(s) or folder(s) you want to convert.
